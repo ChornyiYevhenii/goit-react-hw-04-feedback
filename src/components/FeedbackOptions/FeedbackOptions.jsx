@@ -1,36 +1,34 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   ButonsWrapp,
   ButtonForFeedback,
-} from '../Statistics/FeedbackWidget.styled';
+} from './FeedbackWidget.styled';
 import { Section } from 'components/Section/Section';
 
 
-class FeedbackOptions extends Component {
-  static propTypes = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-  };
-  render() {
-    return (
+const FeedbackOptions = ({options, onLeaveFeedback}) => {
+  return (
       <Section title="Please leave feedback">
-        <ButonsWrapp className="feedbackButtons">
-          {this.props.options.map(key => (
+        <ButonsWrapp>
+          {options.map(option => (
             <ButtonForFeedback
-            key={key}
+              key={option}
               type="button"
-              className={key}
-              onClick={() => {this.props.onLeaveFeedback(key)}}
+              onClick={() => {onLeaveFeedback(option)}}
             >
-              {key.slice(0, 1).toUpperCase().concat(key.slice(1))}
+              {option.slice(0, 1).toUpperCase().concat(option.slice(1))}
             </ButtonForFeedback>
           ))}
         </ButonsWrapp>
       </Section>
     );
   }
-}
+
+ FeedbackOptions.propTypes = {
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+  };
 
 export default FeedbackOptions;
+

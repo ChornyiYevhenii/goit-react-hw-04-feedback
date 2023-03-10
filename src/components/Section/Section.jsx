@@ -5,7 +5,7 @@ import { Title } from './Section.styled'
 
 export const Section = ({ children, title }) => {
   return (
-    <SectionWrapp className="FeedbackBlock">
+    <SectionWrapp>
       <>
         <Title>{title}</Title>
       </>

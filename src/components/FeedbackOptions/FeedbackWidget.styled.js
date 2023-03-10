@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const ButonsWrapp = styled.div`
-  text-align: center;
+text-align: center;
  border: solid 2px orange;
  padding: 10px;
  border-radius: 5px;
