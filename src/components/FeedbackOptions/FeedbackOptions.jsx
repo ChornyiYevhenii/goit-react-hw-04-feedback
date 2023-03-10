@@ -6,6 +6,7 @@ import {
 } from '../Statistics/FeedbackWidget.styled';
 import { Section } from 'components/Section/Section';
 
+
 class FeedbackOptions extends Component {
   static propTypes = {
     good: PropTypes.number,
